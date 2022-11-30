@@ -10,13 +10,11 @@ public class CameraControler : MonoBehaviour
     [SerializeField] float maxHeight = 10;
     [SerializeField] float maxWidth = 10;
     [SerializeField] GameObject selecter;
-    [SerializeField] private List <GameObject> target = new List<GameObject>();
+    private List <GameObject> target = new List<GameObject>();
     private Camera camera;
     private Vector2 positionMouse;
     private GameObject nowSelect;
-    private int mainTarget;
-
-
+    
     public void SelectTarget(GameObject t)
     {
         target.Add(t);
@@ -84,44 +82,32 @@ public class CameraControler : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            /*Debug.Log(cameraSee);
+            nowSelect = Instantiate(selecter, new Vector3(cameraSee.x, cameraSee.y, 0), Quaternion.identity);
+            nowSelect.GetComponent<Select>().selectCamera(this.GetComponent<Camera>());*/
             if (target.Count == 0)
             {
-                nowSelect = Instantiate(selecter, new Vector3(cameraSee.x, cameraSee.y, 0), Quaternion.identity);
-                nowSelect.GetComponent<Select>().selectCamera(this.GetComponent<Camera>());
+                RaycastHit2D hit = Physics2D.Raycast(new Vector2(camera.ScreenToWorldPoint(Input.mousePosition).x, camera.ScreenToWorldPoint(Input.mousePosition).y), Vector2.zero, 0f);
+                if (hit.collider != null && hit.collider.GetComponent<Component>())
+                    SelectTarget(hit.collider.gameObject);
             }
             else
             {
                 foreach (GameObject i in target)
-                    i.GetComponent<Component>().Unselect();
+                    i.GetComponent<Component>().ChekLink();
                 target = new List<GameObject>();
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Mouse0) && nowSelect != null)
+        /*if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            GameObject[] x = nowSelect.GetComponent<Select>().GetObjects();
+            target = nowSelect.GetComponent<Select>().GetListObject();
             Destroy(nowSelect);
-            foreach (GameObject i in x)
-            {
-                target.Add(i);
-                i.GetComponent<Component>().Select();
-            }
-
-            nowSelect = null;
-            mainTarget = 0;
-            float mn = Vector2.Distance(target[mainTarget].transform.position, cameraSee);
-            for (int i = 0; i < target.Count; i++)
-                if (mn > Vector2.Distance(target[i].transform.position, cameraSee))
-                {
-                    mn = Vector2.Distance(target[i].transform.position, cameraSee);
-                    mainTarget = i;
-                }
-        }
-
-        if (target.Count != 0) {
+        }*/
+        
+        if (target.Count != 0)
             foreach (GameObject i in target)
-                i.transform.position += new Vector3(cameraSee.x - target[mainTarget].transform.position.x, cameraSee.y - target[mainTarget].transform.position.y, 0);
-        }
+                i.transform.position += new Vector3(cameraSee.x - i.transform.position.x, cameraSee.y - i.transform.position.y, 0);
 
     }
 }
