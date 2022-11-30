@@ -154,6 +154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 694cd36b082008b45b7681071e4af928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedObject: []
   camera: {fileID: 6632351274643288911, guid: bb2c5af9a8d276d4aa4f831fe07cfe35, type: 3}
 --- !u!50 &7943164688318085520
 Rigidbody2D:
