@@ -6,6 +6,9 @@ public class Component : MonoBehaviour
 {
     [SerializeField] private float distan = 0.5f;
     [SerializeField] private Color selectColor;
+    [SerializeField] private bool isWhiteList;
+    [SerializeField] private List<string> whiteList = new List<string>();
+    [SerializeField] private string nameComponent = "Component";
     private Outline outline = null;
     private RaycastHit2D[] rays = new RaycastHit2D[4];
     [SerializeField] private bool selected = false;
@@ -33,6 +36,7 @@ public class Component : MonoBehaviour
             outline.SetColor("selectColor");
             outline.OutlineOn();
         }
+        this.transform.position -= Vector3.forward;
     }
 
     public void Unselect()
@@ -42,7 +46,25 @@ public class Component : MonoBehaviour
         {
             outline.OutlineOff();
         }
+        this.transform.position += Vector3.forward;
     }
 
+    public string GetName() => nameComponent;
 
+    public bool CheckUnselect()
+    {
+        this.GetComponent<BoxCollider2D>().enabled = false;
+        RaycastHit2D underObject = Physics2D.Raycast(this.transform.position, Vector3.forward);
+        this.GetComponent<BoxCollider2D>().enabled = true;
+        if (underObject.collider != null)
+            if (underObject.collider.GetComponent<Component>())
+                if (whiteList.Contains(underObject.collider.GetComponent<Component>().GetName()) == isWhiteList)
+                    return true;
+                else
+                    return false;
+            else
+                return true;
+        else
+            return true;
+    }
 }

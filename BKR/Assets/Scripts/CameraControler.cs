@@ -91,9 +91,19 @@ public class CameraControler : MonoBehaviour
             }
             else
             {
+                bool ican = true;
                 foreach (GameObject i in target)
-                    i.GetComponent<Component>().Unselect();
-                target = new List<GameObject>();
+                    if (!i.GetComponent<Component>().CheckUnselect())
+                    {
+                        ican = false;
+                        break;
+                    }
+                if (ican)
+                {
+                    foreach (GameObject i in target)
+                        i.GetComponent<Component>().Unselect();
+                    target = new List<GameObject>();
+                }
             }
         }
 
@@ -119,8 +129,9 @@ public class CameraControler : MonoBehaviour
         }
 
         if (target.Count != 0) {
+            Vector3 moveVector = new Vector3(cameraSee.x - target[mainTarget].transform.position.x, cameraSee.y - target[mainTarget].transform.position.y, 0);
             foreach (GameObject i in target)
-                i.transform.position += new Vector3(cameraSee.x - target[mainTarget].transform.position.x, cameraSee.y - target[mainTarget].transform.position.y, 0);
+                i.transform.position += moveVector;
         }
 
     }

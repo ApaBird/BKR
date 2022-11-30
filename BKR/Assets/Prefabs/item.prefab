@@ -182,6 +182,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distan: 0.2
   selectColor: {r: 0.11614456, g: 0.72890705, b: 0.8490566, a: 1}
+  isWhiteList: 0
+  whiteList:
+  - Component
+  nameComponent: Component
+  selected: 0
 --- !u!61 &5370181504009781081
 BoxCollider2D:
   m_ObjectHideFlags: 0
