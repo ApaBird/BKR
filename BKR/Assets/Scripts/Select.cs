@@ -23,17 +23,23 @@ public class Select : MonoBehaviour
 
     public GameObject[] GetObjects()
     {
-        GameObject[] x = new GameObject[selectedObject.Count];
-        for (int i = 0; i < selectedObject.Count; i++)
-            x[i] = selectedObject[i];
-        return x;
+        if (selectedObject.Count > 0)
+        {
+            GameObject[] x = new GameObject[selectedObject.Count];
+            for (int i = 0; i < selectedObject.Count; i++)
+                x[i] = selectedObject[i];
+            return x;
+        }
+        else
+            return new GameObject[0];
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.GetComponent<Component>())
         {
-            collision.GetComponent<Component>().Select();
+            if (collision.GetComponent<Outline>())
+                collision.GetComponent<Outline>().OutlineOn();
             selectedObject.Add(collision.gameObject);
         }
     }
