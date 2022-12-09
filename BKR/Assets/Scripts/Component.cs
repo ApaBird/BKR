@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Component : IClickComponent
 {
@@ -9,6 +10,7 @@ public class Component : IClickComponent
     [SerializeField] private bool isWhiteList;
     [SerializeField] private List<string> whiteList = new List<string>();
     [SerializeField] private string nameComponent = "Component";
+    [SerializeField] private GameObject preview;
     private Camera camera;
     private Outline outline = null;
     private RaycastHit2D[] rays = new RaycastHit2D[4];
@@ -26,10 +28,17 @@ public class Component : IClickComponent
         }
     }
 
+    public void Rotate()
+    {
+        Vector3 angel = this.transform.rotation.eulerAngles;
+        this.transform.rotation = Quaternion.Euler(angel + Vector3.forward * 90);
+    }
+
     private void Update()
     {
         if (!selected)
             this.transform.position = new Vector3(Mathf.Round(this.transform.position.x), Mathf.Round(this.transform.position.y), 0);
+
         else
         {
             mousePosition = camera.ScreenPointToRay(Input.mousePosition).GetPoint(Mathf.Abs(camera.transform.position.z));
@@ -84,5 +93,10 @@ public class Component : IClickComponent
                 return true;
         else
             return true;
+    }
+
+    public GameObject GetSprite()
+    {
+        return preview;
     }
 }

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LogicConstruct.unity
+- path: Assets/Scenes/RobotConstruct.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

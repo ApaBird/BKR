@@ -75,5 +75,13 @@ public class CameraControler : MonoBehaviour
             nowSelect = null;
         }
 
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (target.Count == 1 && target[0].GetComponent<Component>())
+            {
+                target[0].GetComponent<Component>().Rotate();
+            }
+        }
+
     }
 }
