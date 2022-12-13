@@ -465,7 +465,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5543675761087698876, guid: f6cc182bff539644aa7df13251125255, type: 3}
       propertyPath: m_Name
-      value: DotSpawn
+      value: Robot
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f6cc182bff539644aa7df13251125255, type: 3}

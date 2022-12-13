@@ -13,7 +13,6 @@ public class Component : IClickComponent
     [SerializeField] private GameObject preview;
     private Camera camera;
     private Outline outline = null;
-    private RaycastHit2D[] rays = new RaycastHit2D[4];
     private bool selected = false;
     private Vector3 mousePosition;
     private Vector3 lastMousePosition;
@@ -33,6 +32,8 @@ public class Component : IClickComponent
         Vector3 angel = this.transform.rotation.eulerAngles;
         this.transform.rotation = Quaternion.Euler(angel + Vector3.forward * 90);
     }
+
+    public bool GetSelect() => selected;
 
     private void Update()
     {
@@ -95,8 +96,10 @@ public class Component : IClickComponent
             return true;
     }
 
-    public GameObject GetSprite()
+    public GameObject GetSprite() => preview;
+
+    public ComponentInfo Save()
     {
-        return preview;
+        return new ComponentInfo { Name =  this.nameComponent, Position = this.transform.position, Rotate = this.transform.rotation};
     }
 }

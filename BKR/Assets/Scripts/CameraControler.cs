@@ -83,5 +83,7 @@ public class CameraControler : MonoBehaviour
             }
         }
 
+        if (Input.GetKeyDown(KeyCode.R))
+            SaveRobot.Save("Robot1");
     }
 }
