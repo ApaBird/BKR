@@ -102,7 +102,7 @@ MonoBehaviour:
   selectColor: {r: 0.11614456, g: 0.72890705, b: 0.8490566, a: 1}
   isWhiteList: 1
   whiteList: []
-  nameComponent: Wheel
+  nameComponent: Proc
   preview: {fileID: 7936340789316118706, guid: 71cf023a9722e84489792612d89eba21, type: 3}
 --- !u!61 &4063094141509897041
 BoxCollider2D:

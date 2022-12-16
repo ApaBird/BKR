@@ -6,6 +6,7 @@ using System.IO;
 public class SpawnRobot : MonoBehaviour
 {
     private string path = "Robot1.json";
+    [SerializeField] private List<GameObject> prefabs;
 
     private void Start()
     {
@@ -17,10 +18,26 @@ public class SpawnRobot : MonoBehaviour
     public void LoadRobot()
     {
         StreamReader file = new StreamReader(path);
-        Dictionary<string,string> b =  JsonUtility.FromJson<Dictionary<string, string>>(file.ReadLine());
-        foreach (KeyValuePair<string, string> a in b)
+        Robot b =  JsonUtility.FromJson<Robot>(file.ReadLine());
+        Vector3 center = Vector3.zero;
+        foreach (ComponentInfo a in b.components)
         {
-            Debug.Log(a);
+            if (a.Name == "Proc")
+            {
+                center = this.transform.position - a.Position;
+                break;
+            }
+        }
+        foreach (ComponentInfo a in b.components)
+        {
+            GameObject prefab = null;
+            foreach (GameObject el in prefabs)
+                if (el.GetComponent<IRobotComponent>().GetName() == a.Name)
+                {
+                    prefab = el;
+                    break;
+                }
+            Instantiate<GameObject>(prefab, a.Position + center, a.Rotate).transform.parent = this.transform;
         }
     }
 }
