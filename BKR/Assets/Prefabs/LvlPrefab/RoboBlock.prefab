@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae33e2f002ea26848822f483573502ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Component
+  name: Robo
 --- !u!1 &4842342974043578614
 GameObject:
   m_ObjectHideFlags: 0

@@ -763,6 +763,18 @@ PrefabInstance:
       propertyPath: field of view
       value: 60
       objectReference: {fileID: 0}
+    - target: {fileID: 6632351274643288911, guid: bb2c5af9a8d276d4aa4f831fe07cfe35, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.29125133
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632351274643288911, guid: bb2c5af9a8d276d4aa4f831fe07cfe35, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.528576
+      objectReference: {fileID: 0}
+    - target: {fileID: 6632351274643288911, guid: bb2c5af9a8d276d4aa4f831fe07cfe35, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.7264151
+      objectReference: {fileID: 0}
     - target: {fileID: 6632351274643289008, guid: bb2c5af9a8d276d4aa4f831fe07cfe35, type: 3}
       propertyPath: m_RootOrder
       value: 0

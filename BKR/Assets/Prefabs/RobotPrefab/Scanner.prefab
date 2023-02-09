@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 2630153366118724781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.56, y: 2.56, z: 1}
   m_Children: []
   m_Father: {fileID: 6439622616486491185}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 022ba67e786b1d146ae3918f1740683d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -92,9 +92,12 @@ GameObject:
   m_Component:
   - component: {fileID: 6439622616486491185}
   - component: {fileID: 6439622616486491184}
-  - component: {fileID: 589456399616160314}
   - component: {fileID: 7745014001854487178}
+  - component: {fileID: 589456399616160314}
   - component: {fileID: 2671769741632869189}
+  - component: {fileID: 368233693781458604}
+  - component: {fileID: 8275858077978362306}
+  - component: {fileID: -5029338156799826468}
   m_Layer: 0
   m_Name: Scanner
   m_TagString: RobotComponent
@@ -168,24 +171,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &589456399616160314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6439622616486491191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a686c3ea8497b3841a2fe87a5ce91239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distan: 0.2
-  selectColor: {r: 0.11614456, g: 0.72890705, b: 0.8490566, a: 1}
-  isWhiteList: 1
-  whiteList: []
-  nameComponent: Scanner
-  preview: {fileID: 125661511064698620, guid: 887849e94c3679a45a96d03d0fbdeb71, type: 3}
 --- !u!61 &7745014001854487178
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -212,6 +197,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &589456399616160314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439622616486491191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a686c3ea8497b3841a2fe87a5ce91239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2671769741632869189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,3 +223,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borderSize: 0.1
   outlineObject: {fileID: 2630153366118724781}
+--- !u!114 &368233693781458604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439622616486491191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b161bfb635cd5488f4d7347120c0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectColor: {r: 0, g: 0.42405272, b: 1, a: 0}
+  isWhiteList: 1
+  whiteList: []
+--- !u!114 &8275858077978362306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439622616486491191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2476387354f09ab4b81b51d9b92a8f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameComponent: Scanner
+--- !u!114 &-5029338156799826468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6439622616486491191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9981b1af3fb06f4f9ef2b8c21c0950e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preview: {fileID: 125661511064698620, guid: 887849e94c3679a45a96d03d0fbdeb71, type: 3}

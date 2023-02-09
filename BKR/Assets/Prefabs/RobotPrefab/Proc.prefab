@@ -10,9 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 740544229945779690}
   - component: {fileID: 740544229945779691}
-  - component: {fileID: 6572714295424852961}
   - component: {fileID: 4063094141509897041}
+  - component: {fileID: 6572714295424852961}
   - component: {fileID: 8506415447077782174}
+  - component: {fileID: 676967995406886996}
+  - component: {fileID: -725442277723251932}
+  - component: {fileID: 4379124949985637971}
   m_Layer: 0
   m_Name: Proc
   m_TagString: RobotComponent
@@ -86,24 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6572714295424852961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740544229945779692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a686c3ea8497b3841a2fe87a5ce91239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distan: 0.2
-  selectColor: {r: 0.11614456, g: 0.72890705, b: 0.8490566, a: 1}
-  isWhiteList: 1
-  whiteList: []
-  nameComponent: Proc
-  preview: {fileID: 7936340789316118706, guid: 71cf023a9722e84489792612d89eba21, type: 3}
 --- !u!61 &4063094141509897041
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -130,6 +115,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
+--- !u!114 &6572714295424852961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740544229945779692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a686c3ea8497b3841a2fe87a5ce91239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8506415447077782174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +141,47 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   borderSize: 0.1
   outlineObject: {fileID: 8617916227648513398}
+--- !u!114 &676967995406886996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740544229945779692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b161bfb635cd5488f4d7347120c0a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectColor: {r: 0, g: 0.5959959, b: 1, a: 0}
+  isWhiteList: 1
+  whiteList: []
+--- !u!114 &-725442277723251932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740544229945779692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2476387354f09ab4b81b51d9b92a8f12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameComponent: Proc
+--- !u!114 &4379124949985637971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740544229945779692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9981b1af3fb06f4f9ef2b8c21c0950e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  preview: {fileID: 7936340789316118706, guid: 71cf023a9722e84489792612d89eba21, type: 3}
 --- !u!1 &8617916227648513398
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,7 +208,7 @@ Transform:
   m_GameObject: {fileID: 8617916227648513398}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.56, y: 2.56, z: 1}
   m_Children: []
   m_Father: {fileID: 740544229945779690}
   m_RootOrder: 0
@@ -215,7 +253,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 022ba67e786b1d146ae3918f1740683d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
