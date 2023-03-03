@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PrewObject : IClickComponent
+public class PrewObject : IClickComponent, IElementBar
 {
-    [SerializeField] private GameObject original;
+    [SerializeField] public GameObject original;
+
+    public GameObject GetElement()
+    {
+        return this.gameObject;
+    }
 
     public override GameObject Select(Camera cam)
     {

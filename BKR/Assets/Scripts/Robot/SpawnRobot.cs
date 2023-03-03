@@ -18,9 +18,9 @@ public class SpawnRobot : MonoBehaviour
     public void LoadRobot()
     {
         StreamReader file = new StreamReader(path);
-        Robot b =  JsonUtility.FromJson<Robot>(file.ReadLine());
+        Robot rorbot =  JsonUtility.FromJson<Robot>(file.ReadLine());
         Vector3 center = Vector3.zero;
-        foreach (ComponentInfo a in b.components)
+        foreach (ComponentInfo a in rorbot.components)
         {
             if (a.Name == "Proc")
             {
@@ -28,7 +28,7 @@ public class SpawnRobot : MonoBehaviour
                 break;
             }
         }
-        foreach (ComponentInfo a in b.components)
+        foreach (ComponentInfo a in rorbot.components)
         {
             GameObject prefab = null;
             foreach (GameObject el in prefabs)

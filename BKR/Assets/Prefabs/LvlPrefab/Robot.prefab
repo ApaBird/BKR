@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefabs:
-  - {fileID: 740544229945779692, guid: 6aae1f8b37155b049b5a28ba34993d6e, type: 3}
-  - {fileID: 8692866702765527524, guid: 8e86c6e6e375b10439db9996ab709d1b, type: 3}
-  - {fileID: 6439622616486491191, guid: 73254725fb2e29a4785ac6f8c5947af9, type: 3}
-  - {fileID: 7513961059630889683, guid: 3c0b57d5d9437864e95349b0872e61e1, type: 3}
+  - {fileID: 2518605624150762229, guid: 9ad43b52d3e83ba4b9bf2c2812d52747, type: 3}
+  - {fileID: 897521838920285678, guid: 40f9ef85594360448b36894b2828dd7c, type: 3}
+  - {fileID: 4534413908807229548, guid: 2ea0525046e631c40a39342006b255dc, type: 3}
+  - {fileID: 2808204307175305263, guid: 14d63226700910049ad7d7d18da0cde0, type: 3}
 --- !u!50 &2103861014351838027
 Rigidbody2D:
   serializedVersion: 4
@@ -62,7 +62,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 0.25
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 897521838920285672}
   - component: {fileID: 897521838920285673}
   - component: {fileID: 4490459153272574803}
-  - component: {fileID: 4871291788933970725}
+  - component: {fileID: -7759863937796990230}
   m_Layer: 0
   m_Name: ScannerRobot
   m_TagString: RobotComponent
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &4871291788933970725
+--- !u!114 &-7759863937796990230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,10 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 897521838920285678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae33e2f002ea26848822f483573502ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 2476387354f09ab4b81b51d9b92a8f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Scanner
+  nameComponent: Scanner
 --- !u!1 &8190551772084698484
 GameObject:
   m_ObjectHideFlags: 0

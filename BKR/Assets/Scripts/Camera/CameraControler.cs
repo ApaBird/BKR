@@ -50,7 +50,9 @@ public class CameraControler : MonoBehaviour
             }
             else if (hit.collider != null && hit.collider.GetComponent<IClickComponent>())
             {
-                target.Add(hit.collider.GetComponent<IClickComponent>().Select(camera));   
+                GameObject obj = hit.collider.GetComponent<IClickComponent>().Select(camera);
+                if(obj)
+                    target.Add(obj);   
             }
 
         }
@@ -70,7 +72,9 @@ public class CameraControler : MonoBehaviour
             Destroy(nowSelect);
             foreach (GameObject i in x)
             {
-                target.Add(i.GetComponent<IClickComponent>().Select(camera)); 
+                GameObject obj = i.GetComponent<IClickComponent>().Select(camera);
+                if (obj)
+                    target.Add(obj);
             }
             nowSelect = null;
         }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4534413908807229546}
   - component: {fileID: 4534413908807229547}
   - component: {fileID: 921138927941881553}
-  - component: {fileID: 8545904590155550021}
+  - component: {fileID: -9007041638603572172}
   m_Layer: 0
   m_Name: RoboBlock
   m_TagString: RobotComponent
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
---- !u!114 &8545904590155550021
+--- !u!114 &-9007041638603572172
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,10 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4534413908807229548}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae33e2f002ea26848822f483573502ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 2476387354f09ab4b81b51d9b92a8f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Robo
+  nameComponent: Robo
 --- !u!1 &4842342974043578614
 GameObject:
   m_ObjectHideFlags: 0

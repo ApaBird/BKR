@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2808204307175305257}
   - component: {fileID: 2808204307175305256}
   - component: {fileID: 1503442950526262930}
-  - component: {fileID: 6844455739882632187}
+  - component: {fileID: 7269323547801139116}
   m_Layer: 0
   m_Name: ProcRobot
   m_TagString: RobotComponent
@@ -111,7 +111,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &6844455739882632187
+--- !u!114 &7269323547801139116
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,10 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2808204307175305263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae33e2f002ea26848822f483573502ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 2476387354f09ab4b81b51d9b92a8f12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Proc
+  nameComponent: Proc
 --- !u!1 &6568133763767054517
 GameObject:
   m_ObjectHideFlags: 0
