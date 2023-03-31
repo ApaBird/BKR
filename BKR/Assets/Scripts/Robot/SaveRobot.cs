@@ -2,10 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 
-public static class SaveRobot : object
+public class SaveRobot : MonoBehaviour
 {
-    public static string Save(string robotName)
+    public void Save(TMP_Text name)
+    {
+        if (name.text.Length > 1)
+            Save(name.text);
+        else
+            Debug.Log("Нет имени!");
+    }
+
+    public void Save(string robotName)
     {
         GameObject[] components = GameObject.FindGameObjectsWithTag("RobotComponent");
         bool saved = false;
@@ -15,7 +24,6 @@ public static class SaveRobot : object
             {
                 if(component.GetComponent<SavedObject>().Save().Name == "Proc")
                 {
-                    Debug.Log("F");
                     saved = true;
                     break;
                 }
@@ -25,7 +33,6 @@ public static class SaveRobot : object
         if (!saved)
         {
             Debug.Log("Not Save");
-            return "Not Save";
         }
         else
         {
@@ -37,10 +44,9 @@ public static class SaveRobot : object
                 json[iter] = component.GetComponent<SavedObject>().Save();
                 iter++;
             }
-            StreamWriter file = new StreamWriter(robotName + ".json", false);
+            StreamWriter file = new StreamWriter("Robots/" + robotName + ".json", false);
             file.Write(JsonUtility.ToJson(new Robot{components = json}));
             file.Close();
-            return "Save";
         }
     }
 }

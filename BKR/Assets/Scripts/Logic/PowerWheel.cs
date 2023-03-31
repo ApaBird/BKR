@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PowerWheel : ILogicComponent
 {
-    public void Action()
+    public override void Action()
     {
         throw new System.NotImplementedException();
     }

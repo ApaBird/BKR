@@ -5,18 +5,31 @@ using System.IO;
 
 public class SpawnRobot : MonoBehaviour
 {
-    private string path = "Robot1.json";
-    [SerializeField] private List<GameObject> prefabs;
+    private string path = "";
+    [SerializeField] protected List<GameObject> prefabs;
 
     private void Start()
     {
         LoadRobot();
     }
 
-    public void SetRobot(string p) => path = p;
+    public void SetRobot(string p)
+    {
+        path = p;
+        LoadRobot();
+    }
 
     public void LoadRobot()
     {
+        Transform[] des = GetComponentsInChildren<Transform>();
+        foreach(Transform t in des) { 
+            if (this.gameObject != t.gameObject)
+                Destroy(t.gameObject); 
+        }
+
+        float sizeX = this.transform.localScale.x, sizeY = this.transform.localScale.y, sizeZ = this.transform.localScale.z;
+        this.transform.localScale = Vector3.one;
+        Debug.Log(path);
         StreamReader file = new StreamReader(path);
         Robot rorbot =  JsonUtility.FromJson<Robot>(file.ReadLine());
         Vector3 center = Vector3.zero;
@@ -41,5 +54,6 @@ public class SpawnRobot : MonoBehaviour
             component.transform.parent = this.transform;
             Destroy(component.GetComponent<Control>());
         }
+        this.transform.localScale = new Vector3(sizeX, sizeY, sizeZ);
     }
 }

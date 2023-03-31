@@ -7,6 +7,7 @@ public class CameraControler : MonoBehaviour
     [SerializeField] GameObject selecter;
     [SerializeField] private List <GameObject> target = new List<GameObject>();
     [SerializeField] private float pauseTime = 0.1f;
+    [SerializeField] private GameObject menu;
     private Camera camera;
     private float timeClick;
     private GameObject nowSelect;
@@ -87,7 +88,10 @@ public class CameraControler : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
-            SaveRobot.Save("Robot1");
+        if (Input.GetKeyDown(KeyCode.Escape))
+            if (menu.activeSelf)
+                menu.SetActive(false);
+            else
+                menu.SetActive(true);
     }
 }

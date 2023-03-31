@@ -300,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   list: {fileID: 3958922256172461046}
   text: {fileID: 3958922257520768091}
-  prefabElement: {fileID: 4287835485051975256, guid: c621348eb408e7f46b42dd893e13a944, type: 3}
+  prefabElement: {fileID: 2467967620811245695, guid: c621348eb408e7f46b42dd893e13a944, type: 3}
   offset: 0.5
   interval: 0.45
 --- !u!61 &3958922257814198137

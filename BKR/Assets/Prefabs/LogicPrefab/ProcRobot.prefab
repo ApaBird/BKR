@@ -140,6 +140,7 @@ MonoBehaviour:
   bar: {fileID: 0}
   logicComponent:
   - {fileID: 7651788805824860805, guid: c4533bd445e691743ad5a0b7b9c3e3bf, type: 3}
+  original: {fileID: 2729794620666927077, guid: 9ad43b52d3e83ba4b9bf2c2812d52747, type: 3}
 --- !u!1 &6776370312796444569
 GameObject:
   m_ObjectHideFlags: 0

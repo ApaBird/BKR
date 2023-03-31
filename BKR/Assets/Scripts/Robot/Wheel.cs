@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Wheel : RobotComponent
 {
+    [SerializeField] private List<string> listParams;
     Rigidbody2D rigidbody;
-    private Dictionary<string, float> dictValues = new Dictionary<string, float>();
 
     [SerializeField] private float speed = 0;
     public float Speed { 
@@ -30,8 +30,11 @@ public class Wheel : RobotComponent
 
     private void Start()
     {
+        foreach(string param in listParams)
+        {
+            base.dictValues.Add(param, Speed);
+        }
         rigidbody = GetComponentInParent<Rigidbody2D>();
-        this.dictValues.Add("Speed", Speed);
     }
 
 
@@ -41,5 +44,10 @@ public class Wheel : RobotComponent
         Vector2 direct = new Vector2(-Mathf.Sin(radian), Mathf.Cos(radian));
         Debug.DrawLine(transform.position, new Vector3(direct.x, direct.y ,0) + transform.position, Color.red);//Отрисовка линий
         rigidbody.AddForceAtPosition(direct * speed, this.transform.position, ForceMode2D.Force);
+    }
+
+    public override List<string> GetListKey()
+    {
+        return listParams;
     }
 }
